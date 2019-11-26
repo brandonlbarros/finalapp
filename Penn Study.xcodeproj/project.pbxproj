@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C174A89BBC11D0A2D9C02F89 /* Pods_Penn_Study.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DC197FFAA8E6BD3088AF625 /* Pods_Penn_Study.framework */; };
 		CA934B73238C82BA00826E9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA934B72238C82BA00826E9C /* AppDelegate.swift */; };
 		CA934B75238C82BA00826E9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA934B74238C82BA00826E9C /* ViewController.swift */; };
 		CA934B78238C82BA00826E9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA934B76238C82BA00826E9C /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1DC197FFAA8E6BD3088AF625 /* Pods_Penn_Study.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Penn_Study.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		26A13BEF286848DFEBEF0309 /* Pods-Penn Study.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Penn Study.release.xcconfig"; path = "Target Support Files/Pods-Penn Study/Pods-Penn Study.release.xcconfig"; sourceTree = "<group>"; };
+		53949BD1676C2530D2F5FBA6 /* Pods-Penn Study.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Penn Study.debug.xcconfig"; path = "Target Support Files/Pods-Penn Study/Pods-Penn Study.debug.xcconfig"; sourceTree = "<group>"; };
 		CA934B6F238C82BA00826E9C /* Penn Study.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Penn Study.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA934B72238C82BA00826E9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA934B74238C82BA00826E9C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C174A89BBC11D0A2D9C02F89 /* Pods_Penn_Study.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BD61A2ACA4264091A59093D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DC197FFAA8E6BD3088AF625 /* Pods_Penn_Study.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B04600344E1A68E992583242 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				53949BD1676C2530D2F5FBA6 /* Pods-Penn Study.debug.xcconfig */,
+				26A13BEF286848DFEBEF0309 /* Pods-Penn Study.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CA934B66238C82BA00826E9C = {
 			isa = PBXGroup;
 			children = (
 				CA934B71238C82BA00826E9C /* Penn Study */,
 				CA934B70238C82BA00826E9C /* Products */,
+				B04600344E1A68E992583242 /* Pods */,
+				2BD61A2ACA4264091A59093D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +96,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CA934B81238C82BB00826E9C /* Build configuration list for PBXNativeTarget "Penn Study" */;
 			buildPhases = (
+				C56D82BE312C6876759A419E /* [CP] Check Pods Manifest.lock */,
 				CA934B6B238C82BA00826E9C /* Sources */,
 				CA934B6C238C82BA00826E9C /* Frameworks */,
 				CA934B6D238C82BA00826E9C /* Resources */,
+				24401B2BDA57747B48FB08E5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24401B2BDA57747B48FB08E5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Penn Study/Pods-Penn Study-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Penn Study/Pods-Penn Study-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Penn Study/Pods-Penn Study-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C56D82BE312C6876759A419E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Penn Study-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CA934B6B238C82BA00826E9C /* Sources */ = {
@@ -280,6 +349,7 @@
 		};
 		CA934B82238C82BB00826E9C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53949BD1676C2530D2F5FBA6 /* Pods-Penn Study.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +368,7 @@
 		};
 		CA934B83238C82BB00826E9C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26A13BEF286848DFEBEF0309 /* Pods-Penn Study.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
