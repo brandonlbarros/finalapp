@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IFn-f1-OXk">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,19 +10,243 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Create Account View Controller-->
+        <!--First View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CreateAccountViewController" customModule="Penn_Study" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FirstViewController" customModule="Penn_Study" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Penn Study!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVa-fv-QdA">
+                                <rect key="frame" x="34.5" y="98" width="345.5" height="39.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNW-Fk-Y1i">
+                                <rect key="frame" x="170" y="285" width="74" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Log In"/>
+                                <connections>
+                                    <segue destination="Ozv-bV-UNL" kind="show" id="p8P-rJ-a5q"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already Have an Account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixQ-dw-moQ">
+                                <rect key="frame" x="76.5" y="237.5" width="261" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New to Penn Study?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNU-L0-mQ7">
+                                <rect key="frame" x="106.5" y="406" width="201" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SjB-eT-dlm">
+                                <rect key="frame" x="95.5" y="453.5" width="223" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Create an Account"/>
+                                <connections>
+                                    <segue destination="jvX-6f-AQ1" kind="show" id="CaH-Wu-MGK"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ixQ-dw-moQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0ek-jp-j0Q"/>
+                            <constraint firstItem="sNW-Fk-Y1i" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Dgd-gH-NbN"/>
+                            <constraint firstItem="WVa-fv-QdA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="HUl-fv-9rW"/>
+                            <constraint firstItem="sNW-Fk-Y1i" firstAttribute="top" secondItem="ixQ-dw-moQ" secondAttribute="bottom" constant="20" id="Nd3-od-poZ"/>
+                            <constraint firstItem="ixQ-dw-moQ" firstAttribute="top" secondItem="WVa-fv-QdA" secondAttribute="bottom" constant="100" id="bQG-ki-GFi"/>
+                            <constraint firstItem="WVa-fv-QdA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cQg-ci-MhO"/>
+                            <constraint firstItem="SjB-eT-dlm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dZW-nX-pjE"/>
+                            <constraint firstItem="gNU-L0-mQ7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fS9-LY-z3z"/>
+                            <constraint firstItem="gNU-L0-mQ7" firstAttribute="top" secondItem="sNW-Fk-Y1i" secondAttribute="bottom" constant="75" id="ivr-LC-KAt"/>
+                            <constraint firstItem="SjB-eT-dlm" firstAttribute="top" secondItem="gNU-L0-mQ7" secondAttribute="bottom" constant="20" id="o0w-Zv-Qbl"/>
+                            <constraint firstItem="SjB-eT-dlm" firstAttribute="top" secondItem="gNU-L0-mQ7" secondAttribute="bottom" constant="20" id="s16-ci-k4e"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="nk8-v1-e0O"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="942.02898550724649" y="91.741071428571431"/>
+        </scene>
+        <!--Log In View Controller-->
+        <scene sceneID="SWM-lH-45M">
+            <objects>
+                <viewController id="Ozv-bV-UNL" customClass="LogInViewController" customModule="Penn_Study" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="u9b-vQ-AOB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJd-pa-FFw">
+                                <rect key="frame" x="155" y="108" width="104.5" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBd-8A-0nO">
+                                <rect key="frame" x="180" y="316" width="54" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Log In"/>
+                                <connections>
+                                    <action selector="createAccount:" destination="Ozv-bV-UNL" eventType="touchUpInside" id="LF2-Ol-16b"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter PennKey Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3p3-ge-f0a">
+                                <rect key="frame" x="132" y="196" width="150" height="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cb3-ep-yIg">
+                                <rect key="frame" x="129" y="246" width="156" height="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efA-pe-2q4">
+                                <rect key="frame" x="181" y="367" width="52.5" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="1" green="0.10781789210000001" blue="0.074757826449999995" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rBd-8A-0nO" firstAttribute="top" secondItem="Cb3-ep-yIg" secondAttribute="bottom" constant="40" id="4hr-yr-7aN"/>
+                            <constraint firstItem="3p3-ge-f0a" firstAttribute="top" secondItem="YJd-pa-FFw" secondAttribute="bottom" constant="40" id="4lg-YX-M6q"/>
+                            <constraint firstItem="efA-pe-2q4" firstAttribute="top" secondItem="rBd-8A-0nO" secondAttribute="bottom" constant="15" id="5O7-5l-pQe"/>
+                            <constraint firstItem="3p3-ge-f0a" firstAttribute="centerX" secondItem="u9b-vQ-AOB" secondAttribute="centerX" id="TGc-kX-0vg"/>
+                            <constraint firstItem="Cb3-ep-yIg" firstAttribute="centerX" secondItem="u9b-vQ-AOB" secondAttribute="centerX" id="TtB-2d-e2j"/>
+                            <constraint firstItem="YJd-pa-FFw" firstAttribute="centerX" secondItem="u9b-vQ-AOB" secondAttribute="centerX" id="aqU-Ll-Zqh"/>
+                            <constraint firstItem="rBd-8A-0nO" firstAttribute="centerX" secondItem="u9b-vQ-AOB" secondAttribute="centerX" id="fTa-2M-7Gf"/>
+                            <constraint firstItem="YJd-pa-FFw" firstAttribute="top" secondItem="QCL-YZ-FJ7" secondAttribute="top" constant="20" id="gKe-Jv-qr9"/>
+                            <constraint firstItem="efA-pe-2q4" firstAttribute="centerX" secondItem="u9b-vQ-AOB" secondAttribute="centerX" id="rNc-Fl-Lyz"/>
+                            <constraint firstItem="Cb3-ep-yIg" firstAttribute="top" secondItem="3p3-ge-f0a" secondAttribute="bottom" constant="20" id="v35-qx-HjV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QCL-YZ-FJ7"/>
+                    </view>
+                    <connections>
+                        <outlet property="error" destination="efA-pe-2q4" id="Hsm-t5-DY9"/>
+                        <outlet property="log" destination="rBd-8A-0nO" id="TOW-RP-bES"/>
+                        <outlet property="password" destination="Cb3-ep-yIg" id="Rc7-XZ-kAR"/>
+                        <outlet property="pennKey" destination="3p3-ge-f0a" id="Gmn-RK-kKR"/>
+                        <segue destination="a7b-9J-JcH" kind="show" identifier="toUserHomeFromLogIn" id="30I-8E-Vk8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vt1-cE-EzL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2102.898550724638" y="-291.29464285714283"/>
+        </scene>
+        <!--User Home View Controller-->
+        <scene sceneID="qII-b1-4AS">
+            <objects>
+                <viewController id="a7b-9J-JcH" customClass="UserHomeViewController" customModule="Penn_Study" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="089-Sf-lEk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Cvy-dT-1VS"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="M2l-ad-0q8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z0S-Vv-Krd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3292.753623188406" y="91.741071428571431"/>
+        </scene>
+        <!--Create Account View Controller-->
+        <scene sceneID="Jkh-Mj-zd0">
+            <objects>
+                <viewController id="jvX-6f-AQ1" customClass="CreateAccountViewController" customModule="Penn_Study" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5uc-Iy-rSz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nv7-ct-Ou1">
+                                <rect key="frame" x="71" y="108" width="272" height="49"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="41"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7vt-XW-lIe">
+                                <rect key="frame" x="129" y="247" width="156" height="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENl-oe-FgU">
+                                <rect key="frame" x="139.5" y="317" width="135" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Create Account"/>
+                                <connections>
+                                    <action selector="createAccount:" destination="jvX-6f-AQ1" eventType="touchUpInside" id="1z7-cS-7QH"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fsadas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAh-9i-8mm">
+                                <rect key="frame" x="175.5" y="368" width="63.5" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="1" green="0.10781789210000001" blue="0.074757826449999995" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter PennKey Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wKb-93-cD3">
+                                <rect key="frame" x="132" y="197" width="150" height="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ENl-oe-FgU" firstAttribute="centerX" secondItem="5uc-Iy-rSz" secondAttribute="centerX" id="6ow-Ul-oUD"/>
+                            <constraint firstItem="nv7-ct-Ou1" firstAttribute="centerX" secondItem="5uc-Iy-rSz" secondAttribute="centerX" id="SEG-5v-rAx"/>
+                            <constraint firstItem="wKb-93-cD3" firstAttribute="centerX" secondItem="5uc-Iy-rSz" secondAttribute="centerX" id="UFb-bG-bSz"/>
+                            <constraint firstItem="7vt-XW-lIe" firstAttribute="centerX" secondItem="5uc-Iy-rSz" secondAttribute="centerX" id="YQW-Hh-zfR"/>
+                            <constraint firstItem="7vt-XW-lIe" firstAttribute="top" secondItem="wKb-93-cD3" secondAttribute="bottom" constant="20" id="YbX-kU-Vkq"/>
+                            <constraint firstItem="VAh-9i-8mm" firstAttribute="top" secondItem="ENl-oe-FgU" secondAttribute="bottom" constant="15" id="h3d-Mv-KhU"/>
+                            <constraint firstItem="ENl-oe-FgU" firstAttribute="top" secondItem="7vt-XW-lIe" secondAttribute="bottom" constant="40" id="iXM-9e-K00"/>
+                            <constraint firstItem="nv7-ct-Ou1" firstAttribute="top" secondItem="vJr-3w-Wmm" secondAttribute="top" constant="20" id="pth-Ae-wkh"/>
+                            <constraint firstItem="VAh-9i-8mm" firstAttribute="centerX" secondItem="5uc-Iy-rSz" secondAttribute="centerX" id="quX-gF-Mjp"/>
+                            <constraint firstItem="wKb-93-cD3" firstAttribute="top" secondItem="nv7-ct-Ou1" secondAttribute="bottom" constant="40" id="uoW-3I-Qfa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vJr-3w-Wmm"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ewk-LI-AzU"/>
+                    <connections>
+                        <outlet property="create" destination="ENl-oe-FgU" id="odi-7K-1iF"/>
+                        <outlet property="error" destination="VAh-9i-8mm" id="v2r-JO-Qkl"/>
+                        <outlet property="password" destination="7vt-XW-lIe" id="5RW-M9-Oba"/>
+                        <outlet property="pennKey" destination="wKb-93-cD3" id="8bJ-SZ-xzY"/>
+                        <segue destination="a7b-9J-JcH" kind="show" identifier="toUserHomeFromCreate" id="3tB-BV-FDV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6mD-TB-wtp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2102.898550724638" y="442.63392857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bu0-ye-vHF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IFn-f1-OXk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wBd-YE-Fq6">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Wng-ev-Zpx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bmc-RB-Qvi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="31.884057971014496" y="91.741071428571431"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="3tB-BV-FDV"/>
+    </inferredMetricsTieBreakers>
 </document>
