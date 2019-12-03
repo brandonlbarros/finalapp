@@ -6,6 +6,7 @@ target 'Penn Study' do
   use_frameworks!
 pod 'Firebase/Analytics'
 pod 'Firebase/Database'
+pod 'CodableFirebase'
   # Pods for Penn Study
 
 end

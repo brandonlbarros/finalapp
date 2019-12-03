@@ -18,6 +18,9 @@
 		CA934B8B2394601600826E9C /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA934B8A2394601600826E9C /* LogInViewController.swift */; };
 		CA934B8D2394623600826E9C /* UserHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA934B8C2394623600826E9C /* UserHomeViewController.swift */; };
 		CA934B8F239586E000826E9C /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA934B8E239586E000826E9C /* DataModel.swift */; };
+		CA934B932395C46300826E9C /* UserClassesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA934B922395C46300826E9C /* UserClassesTableViewController.swift */; };
+		CA934B952396D3E400826E9C /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA934B942396D3E400826E9C /* UserInfoViewController.swift */; };
+		CA934B992396F0B800826E9C /* ClassListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA934B982396F0B800826E9C /* ClassListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		CA934B8A2394601600826E9C /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		CA934B8C2394623600826E9C /* UserHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHomeViewController.swift; sourceTree = "<group>"; };
 		CA934B8E239586E000826E9C /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		CA934B922395C46300826E9C /* UserClassesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClassesTableViewController.swift; sourceTree = "<group>"; };
+		CA934B942396D3E400826E9C /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		CA934B982396F0B800826E9C /* ClassListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,9 @@
 				CA934B86238DE8EC00826E9C /* CreateAccountViewController.swift */,
 				CA934B8823945FFB00826E9C /* FirstViewController.swift */,
 				CA934B76238C82BA00826E9C /* Main.storyboard */,
+				CA934B942396D3E400826E9C /* UserInfoViewController.swift */,
+				CA934B922395C46300826E9C /* UserClassesTableViewController.swift */,
+				CA934B982396F0B800826E9C /* ClassListTableViewController.swift */,
 				CA934B8E239586E000826E9C /* DataModel.swift */,
 				CA934B8C2394623600826E9C /* UserHomeViewController.swift */,
 				CA934B8A2394601600826E9C /* LogInViewController.swift */,
@@ -220,7 +229,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA934B8B2394601600826E9C /* LogInViewController.swift in Sources */,
+				CA934B952396D3E400826E9C /* UserInfoViewController.swift in Sources */,
 				CA934B8923945FFB00826E9C /* FirstViewController.swift in Sources */,
+				CA934B932395C46300826E9C /* UserClassesTableViewController.swift in Sources */,
+				CA934B992396F0B800826E9C /* ClassListTableViewController.swift in Sources */,
 				CA934B87238DE8EC00826E9C /* CreateAccountViewController.swift in Sources */,
 				CA934B8D2394623600826E9C /* UserHomeViewController.swift in Sources */,
 				CA934B73238C82BA00826E9C /* AppDelegate.swift in Sources */,

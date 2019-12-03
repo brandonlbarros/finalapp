@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:UserInfoViewController.swift">
+   </FileRef>
+   <FileRef
       location = "group:Penn Study.xcodeproj">
    </FileRef>
    <FileRef

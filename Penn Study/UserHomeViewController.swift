@@ -8,32 +8,36 @@
 
 import UIKit
 
-class UserHomeViewController: UIViewController {
+
+class UserHomeViewController: UITabBarController {
 
     
     
     var user = "user"
+   // var person = User(name: "As", classes: [String]())
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.hidesBackButton = true
         
-        self.navigationItem.hidesBackButton = true;
-        
-        self.navigationItem.title = user;
+        self.navigationItem.title = "Welcome to Penn Study, " + user + "!"
 
-        // Do any additional setup after loading the view.
+        self.tabBar.items?[0].title = "My Profile"
+        
+        self.tabBar.items?[1].title = "My Courses"
+        
+        self.tabBar.items?[2].title = "My Study Groups"
+        
+        
+        //person = User(name: "ASA", classes: [String]())
+    
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
+    
+    
 
 }
