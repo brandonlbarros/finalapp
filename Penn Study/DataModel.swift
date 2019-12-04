@@ -41,16 +41,22 @@ struct Group {
 struct MyData: Codable {
     var classes: [Class]
     var users: [User]
+    var groups: [Group]
 }
 
 struct Class: Codable {
     let name: String
-    let description: String
-    var professor: String
+    let description: String?
+    var professor: String?
 }
 
 struct User: Codable {
     let password: String
+}
+
+struct Group: Codable {
+    let cl: String
+    let number: Int
 }
 
 

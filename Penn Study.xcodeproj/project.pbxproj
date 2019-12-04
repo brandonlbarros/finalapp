@@ -21,6 +21,9 @@
 		CA934B932395C46300826E9C /* UserClassesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA934B922395C46300826E9C /* UserClassesTableViewController.swift */; };
 		CA934B952396D3E400826E9C /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA934B942396D3E400826E9C /* UserInfoViewController.swift */; };
 		CA934B992396F0B800826E9C /* ClassListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA934B982396F0B800826E9C /* ClassListTableViewController.swift */; };
+		CA934B9F2397473100826E9C /* ClassInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA934B9E2397473100826E9C /* ClassInfoViewController.swift */; };
+		CA934BA32397526000826E9C /* UserGroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA934BA22397526000826E9C /* UserGroupsTableViewController.swift */; };
+		CA934BA523975B3D00826E9C /* GroupInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA934BA423975B3D00826E9C /* GroupInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		CA934B922395C46300826E9C /* UserClassesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClassesTableViewController.swift; sourceTree = "<group>"; };
 		CA934B942396D3E400826E9C /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		CA934B982396F0B800826E9C /* ClassListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassListTableViewController.swift; sourceTree = "<group>"; };
+		CA934B9E2397473100826E9C /* ClassInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassInfoViewController.swift; sourceTree = "<group>"; };
+		CA934BA22397526000826E9C /* UserGroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGroupsTableViewController.swift; sourceTree = "<group>"; };
+		CA934BA423975B3D00826E9C /* GroupInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +114,9 @@
 				CA934B7B238C82BB00826E9C /* LaunchScreen.storyboard */,
 				CA934B7E238C82BB00826E9C /* Info.plist */,
 				CA934B84238DE30600826E9C /* GoogleService-Info.plist */,
+				CA934B9E2397473100826E9C /* ClassInfoViewController.swift */,
+				CA934BA22397526000826E9C /* UserGroupsTableViewController.swift */,
+				CA934BA423975B3D00826E9C /* GroupInfoViewController.swift */,
 			);
 			path = "Penn Study";
 			sourceTree = "<group>";
@@ -233,10 +242,13 @@
 				CA934B8923945FFB00826E9C /* FirstViewController.swift in Sources */,
 				CA934B932395C46300826E9C /* UserClassesTableViewController.swift in Sources */,
 				CA934B992396F0B800826E9C /* ClassListTableViewController.swift in Sources */,
+				CA934B9F2397473100826E9C /* ClassInfoViewController.swift in Sources */,
 				CA934B87238DE8EC00826E9C /* CreateAccountViewController.swift in Sources */,
 				CA934B8D2394623600826E9C /* UserHomeViewController.swift in Sources */,
+				CA934BA523975B3D00826E9C /* GroupInfoViewController.swift in Sources */,
 				CA934B73238C82BA00826E9C /* AppDelegate.swift in Sources */,
 				CA934B8F239586E000826E9C /* DataModel.swift in Sources */,
+				CA934BA32397526000826E9C /* UserGroupsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

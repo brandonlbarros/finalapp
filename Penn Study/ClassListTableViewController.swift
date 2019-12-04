@@ -10,41 +10,44 @@ import FirebaseDatabase
 import Firebase
 import CodableFirebase
 
+protocol AddClassDelegate: class {
+    func didAdd(_ c: Class)
+}
+
 class ClassListTableViewController: UITableViewController {
     
     var classes = [Class]()
     var uClass = [Class]()
     let ref = Database.database().reference()
+    weak var delegate: AddClassDelegate?
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.backBarButtonItem?.title = "back"
-        
+        //self.navigationBar.backBarButtonItem?.title = "back"
+        self.navigationController?.navigationBar.backItem?.title = "back"
         
         ref.child("classes").observeSingleEvent(of: .value, with: { (snapshot) in
-            for i in 1 ... snapshot.childrenCount {
-                print(i)
-                self.ref.child("classes/" + String(i)).observeSingleEvent(of: .value, with: { (snap) in
-                    do {
-                        let model = try FirebaseDecoder().decode(Class.self, from: snap.value)
-                        var a = true
-                        for u in self.uClass {
-                            if (u.name == model.name) {
-                                a = false
-                            }
+            for case let child as DataSnapshot in snapshot.children {
+                
+                do {
+                    let m = try FirebaseDecoder().decode(Class.self, from: child.value)
+                    var a = true
+                    for u in self.uClass {
+                        if (m.name == u.name) {
+                            a = false
                         }
-                        if (a) {
-                            self.classes.append(model)
-                        }
-                        self.tableView.reloadData()
-                        
-                        
-                    } catch let error {
-                        print(error)
                     }
-                })
+                    if(a) {
+                        self.classes.append(m)
+                        self.tableView.reloadData()
+                    }
+                    
+                    
+                } catch let error {
+                    print(error)
+                }
             }
         })
         
@@ -77,7 +80,7 @@ class ClassListTableViewController: UITableViewController {
         }
         
         if let descrip = cell?.viewWithTag(2) as? UILabel {
-            descrip.text = classes[indexPath.row].description
+            descrip.text = classes[indexPath.row].professor
         }
         
         
@@ -93,9 +96,9 @@ class ClassListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // TODO: Deselect the cell, and toggle the "favorited" property in your model
         uClass.append(classes[indexPath.row])
+        self.delegate?.didAdd(classes[indexPath.row])
         classes.remove(at: indexPath.row)
         self.tableView.reloadData()
-        
-        
+        self.navigationController?.popViewController(animated: true)
     }
 }

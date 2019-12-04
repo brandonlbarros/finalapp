@@ -7,12 +7,28 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import Firebase
+import CodableFirebase
 
-class UserClassesTableViewController: UITableViewController {
+class UserClassesTableViewController: UITableViewController, AddClassDelegate {
+    
     
 
     var tabbar: UserHomeViewController? = nil
     var classes: [Class] = [Class]()
+    let ref = Database.database().reference()
+    var user = ""
+    
+    
+    func didAdd(_ c: Class) {
+        classes.append(c)
+        self.tableView.reloadData()
+
+        ref.child("users/" + user + "/c" + String(classes.count)).setValue(c.name)
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +36,22 @@ class UserClassesTableViewController: UITableViewController {
 
         tabbar = tabBarController as! UserHomeViewController
         //classes = tabbar!.person.classes
+        user = tabbar?.user ?? "user"
         
+        
+        
+        ref.child("users/" + user).observeSingleEvent(of: .value, with: { (snapshot) in
+            for case let child as DataSnapshot in snapshot.children {
+                var k = child.key
+                let y = k.removeFirst()
+                if (Int(k) != nil && y == "c") {
+                    if let s = child.value as? String {
+                        self.classes.append(Class(name: s, description: nil, professor: nil))
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        })
         
        
         
@@ -59,11 +90,12 @@ class UserClassesTableViewController: UITableViewController {
             }
         } else {
             let c = classes[indexPath.row]
+            if let t = cell?.viewWithTag(1) as? UILabel {
+                t.text = c.name
+                t.font = UIFont.systemFont(ofSize: 25.0)
+            }
         }
-        
-        
-        
-        
+
         return cell ?? UITableViewCell()
     }
     
@@ -75,6 +107,8 @@ class UserClassesTableViewController: UITableViewController {
     // MARK: - Handle user interaction
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // TODO: Deselect the cell, and toggle the "favorited" property in your model
+        
+        performSegue(withIdentifier: "toClassInfo", sender: indexPath)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -83,13 +117,24 @@ class UserClassesTableViewController: UITableViewController {
             case "toClassList":
                 if let vc = segue.destination as? ClassListTableViewController {
                     
+                    vc.delegate = self
                     vc.uClass = self.classes
                 }
+                
+            case "toClassInfo":
+                if let vc = segue.destination as? ClassInfoViewController {
+                    if let i = sender as? IndexPath {
+                        vc.cl = self.classes[i.row]
+                        vc.user = self.user
+                    } 
+                }
+                
             default:
                 break
             }
         }
     }
+    
     
     
     // MARK: - Swipe to delete functionality
