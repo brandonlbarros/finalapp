@@ -15,6 +15,7 @@ class GroupInfoViewController: UIViewController {
 
     @IBOutlet var join: UIButton!
     @IBOutlet weak var group: UILabel!
+    @IBOutlet weak var status: UILabel!
     let ref = Database.database().reference()
     var g = Group(cl: "NO CLASS", number: 1)
     var user = ""
@@ -24,11 +25,13 @@ class GroupInfoViewController: UIViewController {
         super.viewDidLoad()
         group.text = g.cl
         print(user)
+        status.text = ""
 
         // Do any additional setup after loading the view.
+        
     }
     
-    @IBAction func createAccount(_ sender: UIButton) {
+    @IBAction func joinGroup(_ sender: UIButton) {
         ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
             for case let child as DataSnapshot in snapshot.children {
                 var how = 1
@@ -62,7 +65,7 @@ class GroupInfoViewController: UIViewController {
 
                                 var d = membs.key
                                 if (d.removeFirst() == "m") {
-                                    memb = memb + (Int(d) ?? 0)
+                                    memb = memb + 1
                                 }
                             }
                             let u = self.ref.child("groups/" + child.key + "/" + String(self.g.number) + "/m" + String(memb))
@@ -73,6 +76,7 @@ class GroupInfoViewController: UIViewController {
                 }
             }
         })
+        status.text = "Congrats! You have joined this group"
         
         
     }

@@ -418,12 +418,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="laq-2v-U98">
-                                <rect key="frame" x="170" y="493" width="75" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="laq-2v-U98">
+                                <rect key="frame" x="169.5" y="244" width="75" height="30"/>
                                 <state key="normal" title="Join Group"/>
                                 <connections>
-                                    <action selector="createAccount:" destination="uOU-hG-gyd" eventType="touchUpInside" id="8T1-Yf-Ww2"/>
+                                    <action selector="joinGroup:" destination="uOU-hG-gyd" eventType="touchUpInside" id="n9h-lV-2nG"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHi-eX-5ui">
@@ -432,22 +431,33 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uam-MO-CtI">
+                                <rect key="frame" x="186" y="314" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="tHi-eX-5ui" firstAttribute="centerX" secondItem="Om1-fW-9BL" secondAttribute="centerX" id="9Tj-Tc-mPC"/>
                             <constraint firstItem="tHi-eX-5ui" firstAttribute="top" secondItem="tEn-Cf-X1W" secondAttribute="top" constant="20" id="Oq3-JF-wsH"/>
+                            <constraint firstItem="uam-MO-CtI" firstAttribute="top" secondItem="laq-2v-U98" secondAttribute="bottom" constant="40" id="XPA-3G-5yq"/>
+                            <constraint firstItem="laq-2v-U98" firstAttribute="centerX" secondItem="Om1-fW-9BL" secondAttribute="centerX" id="kQs-Wc-i74"/>
+                            <constraint firstItem="laq-2v-U98" firstAttribute="top" secondItem="tHi-eX-5ui" secondAttribute="bottom" constant="100" id="tRd-JM-arB"/>
+                            <constraint firstItem="uam-MO-CtI" firstAttribute="centerX" secondItem="Om1-fW-9BL" secondAttribute="centerX" id="vNT-96-Wwp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tEn-Cf-X1W"/>
                     </view>
                     <connections>
                         <outlet property="group" destination="tHi-eX-5ui" id="ssn-ye-fdy"/>
                         <outlet property="join" destination="laq-2v-U98" id="j7y-Ll-JHQ"/>
+                        <outlet property="status" destination="uam-MO-CtI" id="6pg-GH-POK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ib4-HO-vTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6483" y="198"/>
+            <point key="canvasLocation" x="6482.608695652174" y="197.54464285714286"/>
         </scene>
         <!--Class List Table View Controller-->
         <scene sceneID="0GI-iv-vi8">
