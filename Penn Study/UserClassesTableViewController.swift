@@ -108,6 +108,9 @@ class UserClassesTableViewController: UITableViewController, AddClassDelegate {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // TODO: Deselect the cell, and toggle the "favorited" property in your model
         
+        if (classes.count == 0) {
+            return
+        }
         performSegue(withIdentifier: "toClassInfo", sender: indexPath)
     }
     

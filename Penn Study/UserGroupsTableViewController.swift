@@ -26,6 +26,7 @@ class UserGroupsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.reloadData()
         
         tabbar = tabBarController as! UserHomeViewController
         //classes = tabbar!.person.classes

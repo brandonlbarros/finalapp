@@ -556,30 +556,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d8C-0t-nLI">
-                                <rect key="frame" x="127" y="158" width="172" height="148"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d8C-0t-nLI">
+                                <rect key="frame" x="20" y="113" width="374" height="260"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="260" id="ZK4-FZ-5iJ"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5rw-vC-weF">
-                                <rect key="frame" x="20" y="452" width="206" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PennKey:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWU-Qb-yZc">
+                                <rect key="frame" x="134" y="393" width="146" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PennKey:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWU-Qb-yZc">
-                                <rect key="frame" x="20" y="390" width="206" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5uP-S9-654">
+                                <rect key="frame" x="20" y="466" width="374" height="327"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Welcome to PennStudy! The best way to help you find people in your classes to help with studying, homework, or anything else! To start, go to the "My Classes" tab and add any classes you're in. From there, you can look at your classes by clicking on them, where you'll get a short description as well as a list of the current study groups. Then, you can select any of these groups to join. These will show up in you "My Groups" tab. Have fun!</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5uP-S9-654" firstAttribute="top" secondItem="HWU-Qb-yZc" secondAttribute="bottom" constant="30" id="2oF-i3-OJZ"/>
+                            <constraint firstItem="d8C-0t-nLI" firstAttribute="leading" secondItem="n9J-qW-db8" secondAttribute="leading" constant="20" id="A8a-KC-tOf"/>
+                            <constraint firstItem="n9J-qW-db8" firstAttribute="bottom" secondItem="5uP-S9-654" secondAttribute="bottom" constant="20" id="Ble-Oe-ftp"/>
+                            <constraint firstItem="HWU-Qb-yZc" firstAttribute="centerX" secondItem="nMT-HR-tZe" secondAttribute="centerX" id="EVO-nx-6l3"/>
+                            <constraint firstItem="d8C-0t-nLI" firstAttribute="top" secondItem="n9J-qW-db8" secondAttribute="top" constant="25" id="HbO-qj-pdd"/>
+                            <constraint firstItem="n9J-qW-db8" firstAttribute="trailing" secondItem="5uP-S9-654" secondAttribute="trailing" constant="20" id="Ioe-2y-Qbe"/>
+                            <constraint firstItem="5uP-S9-654" firstAttribute="centerX" secondItem="nMT-HR-tZe" secondAttribute="centerX" id="P75-Lu-ttU"/>
+                            <constraint firstItem="5uP-S9-654" firstAttribute="leading" secondItem="n9J-qW-db8" secondAttribute="leading" constant="20" id="QIM-ic-6a2"/>
+                            <constraint firstItem="n9J-qW-db8" firstAttribute="trailing" secondItem="d8C-0t-nLI" secondAttribute="trailing" constant="20" id="QjG-ey-5bI"/>
+                            <constraint firstItem="d8C-0t-nLI" firstAttribute="centerX" secondItem="nMT-HR-tZe" secondAttribute="centerX" id="axF-61-qjS"/>
+                            <constraint firstItem="HWU-Qb-yZc" firstAttribute="top" secondItem="d8C-0t-nLI" secondAttribute="bottom" constant="20" id="bCz-Lc-ETZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="n9J-qW-db8"/>
                     </view>
                     <tabBarItem key="tabBarItem" id="ueb-Cf-YII"/>
                     <connections>
+                        <outlet property="intro" destination="5uP-S9-654" id="Fn0-jR-RJg"/>
                         <outlet property="pk" destination="HWU-Qb-yZc" id="43e-Je-Buc"/>
                     </connections>
                 </viewController>
