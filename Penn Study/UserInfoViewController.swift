@@ -21,7 +21,7 @@ class UserInfoViewController: UIViewController {
         let tabbar = tabBarController as! UserHomeViewController
         pk.text = "PennKey: " + tabbar.user
         intro.isEditable = false
-        intro.text = "Welcome to PennStudy! The best way to help you find people in your classes to help with studying, homework, or anything else! To start, go to the \"My Courses\" tab and add any classes you're in. From there, you can look at your classes by clicking on them, where you'll get a short description as well as a list of the current study groups. Then, you can select any of these groups to join. These will show up in you \"My Study Groups\" tab. Have fun!"
+        intro.text = "Hello, and welcome to PennStudy! The best way to help you find people in your classes to help with studying, homework, or anything else! To start, go to the \"My Courses\" tab and add any classes you're in. From there, you can look at your classes by clicking on them, where you'll get a short description as well as a list of the current study groups. Then, you can select any of these groups to join, or create your own. These will then show up in you \"My Study Groups\" tab, where you can tap on the group to get more information. Have fun!"
         
         
         
