@@ -76,7 +76,7 @@ class ClassListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
         
         if let name = cell?.viewWithTag(1) as? UILabel {
-            name.text = classes[indexPath.row].name
+            name.text = classes[indexPath.row].name.uppercased()
         }
         
         if let descrip = cell?.viewWithTag(2) as? UILabel {

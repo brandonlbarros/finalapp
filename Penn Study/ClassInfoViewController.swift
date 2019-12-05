@@ -27,7 +27,7 @@ class ClassInfoViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         
         descrip.isEditable = false
-        name.text = cl.name
+        name.text = cl.name.uppercased()
         
         
         ref.child("classes").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -35,7 +35,7 @@ class ClassInfoViewController: UIViewController, UITableViewDelegate, UITableVie
                 do {
                     let m = try FirebaseDecoder().decode(Class.self, from: child.value)
                     
-                    if(m.name == self.name.text) {
+                    if(m.name.uppercased() == self.name.text) {
                         self.prof.text = m.professor
                         self.descrip.text = m.description
                     }
@@ -68,7 +68,7 @@ class ClassInfoViewController: UIViewController, UITableViewDelegate, UITableVie
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return sGroups.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

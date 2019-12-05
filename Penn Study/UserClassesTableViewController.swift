@@ -91,7 +91,7 @@ class UserClassesTableViewController: UITableViewController, AddClassDelegate {
         } else {
             let c = classes[indexPath.row]
             if let t = cell?.viewWithTag(1) as? UILabel {
-                t.text = c.name
+                t.text = c.name.uppercased()
                 t.font = UIFont.systemFont(ofSize: 25.0)
             }
         }

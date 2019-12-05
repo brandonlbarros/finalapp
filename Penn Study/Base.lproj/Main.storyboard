@@ -556,7 +556,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d8C-0t-nLI">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UPenn_shield_with_banner.svg" translatesAutoresizingMaskIntoConstraints="NO" id="d8C-0t-nLI">
                                 <rect key="frame" x="20" y="113" width="374" height="260"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="260" id="ZK4-FZ-5iJ"/>
@@ -603,6 +603,9 @@
             <point key="canvasLocation" x="4462.3188405797109" y="-611.38392857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="UPenn_shield_with_banner.svg" width="250" height="216"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="825-HC-CtC"/>
     </inferredMetricsTieBreakers>

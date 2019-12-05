@@ -26,8 +26,6 @@ class UserGroupsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.reloadData()
-        
         tabbar = tabBarController as! UserHomeViewController
         //classes = tabbar!.person.classes
         user = tabbar?.user ?? "user"
@@ -90,8 +88,8 @@ class UserGroupsTableViewController: UITableViewController {
         } else {
             if let t = cell?.viewWithTag(1) as? UILabel {
                 let a = groups[indexPath.row]
-                var s = String(a.number)
-                t.text = a.cl + " Group " + s
+                let s = String(a.number)
+                t.text = a.cl.uppercased() + " Group " + s
                 t.font = UIFont.systemFont(ofSize: 30.0)
             }
         }
