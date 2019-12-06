@@ -11,6 +11,10 @@ import FirebaseDatabase
 import Firebase
 import CodableFirebase
 
+protocol JoinGroupDelegate: class {
+    func isIn(_ num: Int)
+}
+
 class GroupInfoViewController: UIViewController {
 
     @IBOutlet var join: UIButton!
@@ -21,6 +25,8 @@ class GroupInfoViewController: UIViewController {
     var g = Group(cl: "NO CLASS", number: 1)
     var user = ""
     var members = [String]()
+    var canJoin = true
+    weak var delegate: JoinGroupDelegate?
     
     
     override func viewDidLoad() {
@@ -28,6 +34,9 @@ class GroupInfoViewController: UIViewController {
         group.text = g.cl.uppercased()
         status.text = ""
         list.text = ""
+        if (!canJoin) {
+            join.isHidden = true
+        }
         
         
         ref.child("groups").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -43,9 +52,14 @@ class GroupInfoViewController: UIViewController {
                                 var d = membs.key
                                 if (d.removeFirst() == "m") {
                                     if let s = membs.value as? String {
-                                        print ("HEREHEH")
-                                            self.members.append(s)
-                                        print(self.members.count)
+                                        self.members.append(s)
+                                        if (s == self.user) {
+                                            self.join.isHidden = true
+                                            if (self.canJoin) {
+                                                self.status.text = "You're already a member of this group"
+                                            }
+                                        }
+                                        
                                     }
                                 }
                             }
@@ -69,9 +83,10 @@ class GroupInfoViewController: UIViewController {
     }
     
     @IBAction func joinGroup(_ sender: UIButton) {
+        join.isHidden = true
         ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+            var how = 1
             for case let child as DataSnapshot in snapshot.children {
-                var how = 1
                 if (child.key == self.user) {
                     for case let sgs as DataSnapshot in child.children {
                         var k = sgs.key
@@ -81,13 +96,13 @@ class GroupInfoViewController: UIViewController {
                         }
                     }
                 }
-                
-                var number = String(how)
-                number = "s" + number
-                let u = self.ref.child("users/" + self.user + "/" + number)
-                u.child("cl").setValue(self.g.cl)
-                u.child("number").setValue(String(self.g.number))
             }
+            var number = String(how)
+            number = "s" + number
+            print (number)
+            let u = self.ref.child("users/" + self.user + "/" + number)
+            u.child("cl").setValue(self.g.cl)
+            u.child("number").setValue(String(self.g.number))
         })
         
         ref.child("groups").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -114,6 +129,8 @@ class GroupInfoViewController: UIViewController {
                 }
             }
         })
+        
+        delegate?.isIn(g.number)
         status.text = "Congrats! You have joined this group"
         list.text = ""
         members.append(user)

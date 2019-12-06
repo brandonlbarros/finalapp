@@ -11,7 +11,12 @@ import FirebaseDatabase
 import Firebase
 import CodableFirebase
 
-class ClassInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ClassInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, JoinGroupDelegate {
+    
+    func isIn(_ num: Int) {
+        alreadyIn.append(num)
+        groups.reloadData()
+    }
     
 
     @IBOutlet weak var name: UILabel!
@@ -21,7 +26,10 @@ class ClassInfoViewController: UIViewController, UITableViewDelegate, UITableVie
     let ref = Database.database().reference()
     var cl = Class(name: "Class", description: nil, professor: nil)
     var sGroups = [Group]()
+    var alreadyIn: [Int] = []
     var user = ""
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +44,7 @@ class ClassInfoViewController: UIViewController, UITableViewDelegate, UITableVie
                     let m = try FirebaseDecoder().decode(Class.self, from: child.value)
                     
                     if(m.name.uppercased() == self.name.text) {
-                        self.prof.text = m.professor
+                        self.prof.text = "Professor: " + (m.professor ?? "")
                         self.descrip.text = m.description
                     }
                 } catch let error {
@@ -47,16 +55,29 @@ class ClassInfoViewController: UIViewController, UITableViewDelegate, UITableVie
         
         ref.child("groups").observeSingleEvent(of: .value, with: { (snapshot) in
             for case let child as DataSnapshot in snapshot.children {
+                var num = 0
                 if(child.key == self.cl.name) {
                     for case let gr as DataSnapshot in child.children {
                         do {
                             let m = try FirebaseDecoder().decode(Group.self, from: gr.value)
-                        
+                            num = m.number
                             self.sGroups.append(m)
                             self.groups.reloadData()
-                    
+                            
                         } catch let error {
                             print(error)
+                        }
+                        for case let memb as DataSnapshot in gr.children {
+                            var uIn = false
+                            if let p = memb.value as? String {
+                                if (p == self.user) {
+                                    uIn = true
+                                }
+                            }
+                            if (uIn) {
+                                self.alreadyIn.append(num)
+                                self.groups.reloadData()
+                            }
                         }
                     }
                 }
@@ -66,8 +87,69 @@ class ClassInfoViewController: UIViewController, UITableViewDelegate, UITableVie
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func didSelectAdd(_ sender: UIBarButtonItem) {
+        // TODO: Present an alert view with a text field. When "Done" is pressed, a new NewsItem should be created and inserted at the START of your array of items, and the table view data should be reloaded
+        ref.child("groups").observeSingleEvent(of: .value, with: { (snapshot) in
+            var found = false
+            for case let child as DataSnapshot in snapshot.children {
+                if(child.key == self.cl.name) {
+                    found = true
+                    var h = 1
+                    for case let gr as DataSnapshot in child.children {
+                        h = h + 1
+                    }
+                    let x = self.ref.child("groups/" + self.cl.name + "/" + String(h))
+                    let new = Group(cl: self.cl.name, number: h)
+                    self.sGroups.append(new)
+                    x.child("cl").setValue(self.cl.name)
+                    x.child("number").setValue(h)
+                    x.child("m1").setValue(self.user)
+                    self.alreadyIn.append(h)
+                    self.groups.reloadData()
+                }
+            }
+            if (!found) {
+                let x = self.ref.child("groups/" + self.cl.name + "/" + String(1))
+                let new = Group(cl: self.cl.name, number: 1)
+                self.sGroups.append(new)
+                x.child("cl").setValue(self.cl.name)
+                x.child("number").setValue(1)
+                x.child("m1").setValue(self.user)
+                self.alreadyIn.append(1)
+                self.groups.reloadData()
+                
+            }
+        })
+        
+        ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+            for case let child as DataSnapshot in snapshot.children {
+                if(child.key == self.user) {
+                    var h = 1
+                    for case let gr as DataSnapshot in child.children {
+                        var s = gr.key
+                        if (s.removeFirst() == "s") {
+                            h = h + 1
+                        }
+                    }
+                    let x = self.ref.child("users/" + self.user + "/s" + String(h))
+                    x.child("cl").setValue(self.cl.name)
+                    x.child("number").setValue(String(h))
+                    self.groups.reloadData()
+                }
+            }
+        })
+        let alertController = UIAlertController(title: "Let's Get Studying!", message:
+            "You've Created a new group!" , preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if (sGroups.count == 0) {
+            return 1
+        }
         return sGroups.count
     }
     
@@ -80,6 +162,10 @@ class ClassInfoViewController: UIViewController, UITableViewDelegate, UITableVie
                 t.font = UIFont.systemFont(ofSize: 15.0)
             }
         } else {
+            if (alreadyIn.contains(sGroups[indexPath.row].number)) {
+                cell?.backgroundColor = UIColor.green
+                print ("HERE")
+            }
             if let t = cell?.viewWithTag(1) as? UILabel {
                 let a = sGroups[indexPath.row]
                 let num = String(a.number)
@@ -111,11 +197,11 @@ class ClassInfoViewController: UIViewController, UITableViewDelegate, UITableVie
                     if let i = sender as? IndexPath {
                         vc.g = sGroups[i.row]
                         vc.user = self.user
+                        vc.delegate = self
                     }
                     
                 }
 
-                
             default:
                 break
             }

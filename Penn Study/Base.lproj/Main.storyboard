@@ -354,13 +354,17 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jr5-u4-mR1">
-                                <rect key="frame" x="20" y="392" width="374" height="362"/>
+                                <rect key="frame" x="20" y="381" width="374" height="373"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="FVo-20-fHW">
                                     <rect key="frame" x="0.0" y="72" width="374" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                     <items>
-                                        <barButtonItem systemItem="add" id="8bx-AV-aXs"/>
+                                        <barButtonItem systemItem="add" id="8bx-AV-aXs">
+                                            <connections>
+                                                <action selector="didSelectAdd:" destination="2FZ-79-eDg" id="U5P-9Q-VOS"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </items>
                                 </toolbar>
                                 <prototypes>
@@ -390,9 +394,9 @@
                                     <outlet property="delegate" destination="2FZ-79-eDg" id="XKM-0I-wpG"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Study Groups" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhC-ok-Vq6">
-                                <rect key="frame" x="20" y="358" width="142" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Study Groups (you're already a member of green ones)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhC-ok-Vq6">
+                                <rect key="frame" x="20" y="358" width="376" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -437,7 +441,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="laq-2v-U98">
-                                <rect key="frame" x="169.5" y="374.5" width="75" height="30"/>
+                                <rect key="frame" x="169.5" y="378" width="75" height="30"/>
                                 <state key="normal" title="Join Group">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -452,19 +456,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uam-MO-CtI">
-                                <rect key="frame" x="186" y="419.5" width="42" height="21"/>
+                                <rect key="frame" x="186" y="423" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qur-lg-CIF">
-                                <rect key="frame" x="20" y="164" width="42" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Members" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qur-lg-CIF">
+                                <rect key="frame" x="20" y="164" width="152.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yDd-wh-TNi">
-                                <rect key="frame" x="20" y="194.5" width="374" height="150"/>
+                                <rect key="frame" x="20" y="198" width="374" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="Lml-h5-Soq"/>
@@ -499,7 +503,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ib4-HO-vTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6482.608695652174" y="197.54464285714286"/>
+            <point key="canvasLocation" x="6810" y="773"/>
         </scene>
         <!--Class List Table View Controller-->
         <scene sceneID="0GI-iv-vi8">
@@ -569,6 +573,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.2673552930355072" green="0.36881628632545471" blue="0.96475917100906372" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Oo1-ls-6e1">
+                            <rect key="frame" x="0.0" y="228" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem systemItem="refresh" id="XQl-X1-8UR">
+                                    <connections>
+                                        <action selector="refreshClasses:" destination="COQ-40-Qst" id="mU4-Hq-Lx4"/>
+                                    </connections>
+                                </barButtonItem>
+                            </items>
+                        </toolbar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="100" id="MWZ-sA-jo8">
                                 <rect key="frame" x="0.0" y="28" width="414" height="100"/>
@@ -591,6 +606,35 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell2" rowHeight="100" id="2o4-pC-5FF">
+                                <rect key="frame" x="0.0" y="128" width="414" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2o4-pC-5FF" id="8VL-B1-Za0">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="99.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPc-5s-bXN">
+                                            <rect key="frame" x="40" y="26" width="35.5" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHv-oJ-wpJ">
+                                            <rect key="frame" x="40" y="53" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="QPc-5s-bXN" firstAttribute="top" secondItem="8VL-B1-Za0" secondAttribute="topMargin" constant="15" id="KQB-BL-Cgj"/>
+                                        <constraint firstItem="OHv-oJ-wpJ" firstAttribute="leading" secondItem="8VL-B1-Za0" secondAttribute="leadingMargin" constant="20" id="fMP-aI-z7Z"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="OHv-oJ-wpJ" secondAttribute="bottom" constant="15" id="hDj-Wy-JK6"/>
+                                        <constraint firstItem="QPc-5s-bXN" firstAttribute="leading" secondItem="8VL-B1-Za0" secondAttribute="leadingMargin" constant="20" id="loe-yn-rkM"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="COQ-40-Qst" id="Kde-qu-SZj"/>
@@ -598,6 +642,9 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" id="0uA-GX-Sb0"/>
+                    <connections>
+                        <segue destination="uOU-hG-gyd" kind="show" identifier="seg" id="ulG-ms-88p"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZaL-ng-qj4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -662,6 +709,7 @@
         <image name="UPenn_shield_with_banner.svg" width="250" height="216"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tjn-Wa-7w2"/>
+        <segue reference="ulG-ms-88p"/>
+        <segue reference="825-HC-CtC"/>
     </inferredMetricsTieBreakers>
 </document>
